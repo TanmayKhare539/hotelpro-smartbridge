@@ -43,7 +43,7 @@ export default function HomePage() {
         {/* Accent bar */}
         <div style={{
           position: 'absolute', top: 0, left: 0, right: 0, height: 4,
-          background: '#6366F1',
+          background: '#7C3AED',
           pointerEvents: 'none',
         }} />
 
@@ -54,13 +54,13 @@ export default function HomePage() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 6,
-                background: '#EDE9FE',
-                border: '1px solid #6366F1',
+                background: 'rgba(124, 58, 237, 0.2)',
+                border: '1px solid #7C3AED',
                 borderRadius: 'var(--radius-full)',
                 padding: '4px 14px',
                 fontSize: 'var(--text-xs)',
                 fontWeight: 'var(--weight-semibold)',
-                color: '#4338CA',
+                color: '#C4B5FD',
                 letterSpacing: '0.05em',
                 textTransform: 'uppercase',
               }}>
@@ -275,7 +275,7 @@ export default function HomePage() {
                     />
                     <span style={{
                       position: 'absolute', top: 10, right: 10,
-                      background: '#6366F1', color: '#fff',
+                      background: '#7C3AED', color: '#fff',
                       fontSize: '11px', fontWeight: 700,
                       padding: '3px 10px',
                       borderRadius: '999px',
@@ -294,7 +294,7 @@ export default function HomePage() {
                     </div>
                     <div style={{
                       display: 'inline-flex', alignItems: 'center', gap: 3,
-                      fontSize: 'var(--text-xs)', fontWeight: 600, color: '#6366F1',
+                      fontSize: 'var(--text-xs)', fontWeight: 600, color: '#A78BFA',
                     }}>
                       Explore <ChevronRight size={12} />
                     </div>

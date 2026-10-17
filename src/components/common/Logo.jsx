@@ -52,7 +52,7 @@ export default function Logo({ size = 'md', to = '/', showText = true, className
             width="44"
             height="44"
             rx="12"
-            fill="#6366F1"
+            fill="#7C3AED"
             stroke="#F59E0B"
             strokeWidth="1.5"
           />

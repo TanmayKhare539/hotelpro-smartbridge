@@ -127,9 +127,9 @@ export default function LoginPage() {
                     type="button"
                     onClick={() => handleSelectDemo(account)}
                     style={{
-                      border: isSelected ? '1.5px solid var(--color-primary)' : '1px solid var(--color-border)',
-                      background: isSelected ? 'var(--color-primary-light)' : 'var(--color-bg)',
-                      color: isSelected ? 'var(--color-primary)' : 'var(--color-text-primary)',
+                      border: isSelected ? '1.5px solid #8B5CF6' : '1px solid var(--color-border)',
+                      background: isSelected ? '#7C3AED' : 'var(--color-bg)',
+                      color: isSelected ? '#ffffff' : 'var(--color-text-primary)',
                       borderRadius: 'var(--radius-md)',
                       padding: 'var(--space-2) var(--space-1)',
                       display: 'flex',
@@ -138,13 +138,14 @@ export default function LoginPage() {
                       gap: 4,
                       cursor: 'pointer',
                       transition: 'all var(--transition-fast)',
+                      boxShadow: isSelected ? '0 0 10px rgba(124, 58, 237, 0.4)' : 'none',
                     }}
                     title={`Click to fill ${account.label} credentials`}
                   >
-                    <span style={{ color: isSelected ? 'var(--color-primary)' : 'var(--color-text-secondary)' }}>
+                    <span style={{ color: isSelected ? '#ffffff' : 'var(--color-text-secondary)' }}>
                       {account.icon}
                     </span>
-                    <span style={{ fontSize: 'var(--text-xs)', fontWeight: 'var(--weight-bold)' }}>
+                    <span style={{ fontSize: 'var(--text-xs)', fontWeight: 'var(--weight-bold)', color: isSelected ? '#ffffff' : 'inherit' }}>
                       {account.label}
                     </span>
                   </button>

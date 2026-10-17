@@ -5,9 +5,11 @@
 
 :root {
   /* --- Brand Colors --- */
-  --color-primary:        #6366F1;
-  --color-primary-hover:  #4F46E5;
-  --color-primary-light:  #EDE9FE;
+  --color-primary:        #7C3AED;
+  --color-primary-hover:  #6D28D9;
+  --color-primary-light:  #2E1065;
+  --color-selected-bg:    #7C3AED;
+  --color-selected-text:  #FFFFFF;
   --color-secondary:      #F59E0B;
   --color-secondary-hover:#D97706;
 

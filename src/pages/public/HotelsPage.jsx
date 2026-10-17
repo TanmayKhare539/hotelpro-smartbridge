@@ -263,15 +263,16 @@ export default function HotelsPage() {
                 type="button"
                 onClick={() => handleCitySelect(city)}
                 style={{
-                  border: isSelected ? '1px solid var(--color-primary)' : '1px solid var(--color-border)',
-                  background: isSelected ? 'var(--color-primary-light)' : 'var(--color-bg)',
-                  color: isSelected ? 'var(--color-primary)' : 'var(--color-text-primary)',
+                  border: isSelected ? '1px solid #8B5CF6' : '1px solid var(--color-border)',
+                  background: isSelected ? '#7C3AED' : 'var(--color-bg)',
+                  color: isSelected ? '#ffffff' : 'var(--color-text-primary)',
                   fontWeight: isSelected ? 'var(--weight-bold)' : 'var(--weight-normal)',
                   padding: '4px 12px',
                   borderRadius: 'var(--radius-full)',
                   fontSize: 'var(--text-xs)',
                   cursor: 'pointer',
-                  transition: 'all var(--transition-fast)'
+                  transition: 'all var(--transition-fast)',
+                  boxShadow: isSelected ? '0 0 10px rgba(124, 58, 237, 0.4)' : 'none',
                 }}
               >
                 {city === 'All' ? 'All Cities' : city}

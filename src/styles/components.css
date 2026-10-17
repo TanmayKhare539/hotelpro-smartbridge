@@ -30,6 +30,69 @@
 }
 .btn:active:not(:disabled) {
   transform: translateY(0);
+  background-color: #7C3AED !important;
+  border-color: #8B5CF6 !important;
+  color: #ffffff !important;
+}
+
+/* Selected / Active button state */
+.btn.selected,
+.btn.active,
+.btn[aria-selected="true"],
+.btn[aria-pressed="true"],
+button.selected,
+button.active,
+button[aria-selected="true"],
+button[data-selected="true"] {
+  background-color: #7C3AED !important;
+  border-color: #8B5CF6 !important;
+  color: #ffffff !important;
+}
+
+/* Payment Method Selection Boxes */
+.payment-method-box {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: none;
+  user-select: none;
+}
+
+.payment-method-box:hover:not(.selected) {
+  border-color: #8B5CF6 !important;
+  background: #18181B !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+}
+
+.payment-method-box:hover:not(.selected) .payment-method-icon {
+  color: #A78BFA !important;
+}
+
+.payment-method-box.selected {
+  background: #FFFFFF !important;
+  border: 2px solid #7C3AED !important;
+  color: #7C3AED !important;
+  box-shadow: 0 4px 18px rgba(124, 58, 237, 0.35);
+}
+
+.payment-method-box.selected:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(124, 58, 237, 0.45);
+}
+
+.payment-method-box.selected .payment-method-icon,
+.payment-method-box.selected .payment-method-label {
+  color: #7C3AED !important;
+  font-weight: var(--weight-bold);
 }
 
 .btn:disabled, .btn[aria-busy="true"] {
@@ -40,16 +103,16 @@
 
 /* Primary */
 .btn-primary {
-  background: #6366F1;
+  background: #7C3AED;
   color: #ffffff;
-  border-color: #6366F1;
+  border-color: #7C3AED;
 }
 .btn-primary:hover {
-  background: #4F46E5;
-  border-color: #4F46E5;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  background: #6D28D9;
+  border-color: #6D28D9;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.35);
 }
-.btn-primary:active { background: #4338CA; }
+.btn-primary:active { background: #5B21B6; }
 
 /* Secondary */
 .btn-secondary {

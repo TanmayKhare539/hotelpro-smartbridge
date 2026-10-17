@@ -503,11 +503,11 @@ export default function CheckoutPage() {
                   gap: 6,
                   padding: '4px 10px',
                   borderRadius: 'var(--radius-full)',
-                  background: 'rgba(23, 76, 60, 0.1)',
-                  color: 'var(--color-primary)',
+                  background: 'rgba(124, 58, 237, 0.15)',
+                  color: '#A78BFA',
                   fontSize: 'var(--text-xs)',
                   fontWeight: 'var(--weight-bold)',
-                  border: '1px solid rgba(23, 76, 60, 0.2)'
+                  border: '1px solid rgba(124, 58, 237, 0.3)'
                 }}>
                   <Sparkles size={13} /> Offline Sandbox Mode
                 </span>
@@ -515,18 +515,19 @@ export default function CheckoutPage() {
 
               {/* Offline & Sandbox Notice */}
               <div style={{
-                background: 'var(--color-primary-light)',
-                border: '1px solid rgba(23, 76, 60, 0.2)',
+                background: '#000000',
+                border: '1px solid rgba(124, 58, 237, 0.45)',
                 borderRadius: 'var(--radius-md)',
                 padding: 'var(--space-3) var(--space-4)',
                 marginBottom: 'var(--space-6)',
                 display: 'flex',
                 alignItems: 'center',
-                gap: 'var(--space-3)'
+                gap: 'var(--space-3)',
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.5)'
               }}>
-                <ShieldCheck size={20} color="var(--color-primary)" style={{ flexShrink: 0 }} />
+                <ShieldCheck size={20} color="#A78BFA" style={{ flexShrink: 0 }} />
                 <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-primary)', lineHeight: 1.5 }}>
-                  <strong>Zero Network Error Guarantee:</strong> Payment authorization is fully simulated offline. Your reservation will be confirmed instantly and stored in your guest dashboard.
+                  <strong style={{ color: '#ffffff' }}>Zero Network Error Guarantee:</strong> Payment authorization is fully simulated offline. Your reservation will be confirmed instantly and stored in your guest dashboard.
                 </div>
               </div>
 
@@ -543,25 +544,13 @@ export default function CheckoutPage() {
                     <button
                       key={method.id}
                       type="button"
+                      className={`payment-method-box ${isSelected ? 'selected' : ''}`}
                       onClick={() => setFormData({ ...formData, paymentMethod: method.id })}
-                      style={{
-                        border: isSelected ? '2px solid var(--color-primary)' : '1px solid var(--color-border)',
-                        background: isSelected ? 'var(--color-primary-light)' : 'var(--color-surface)',
-                        borderRadius: 'var(--radius-md)',
-                        padding: 'var(--space-3) var(--space-2)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        gap: 'var(--space-2)',
-                        cursor: 'pointer',
-                        transition: 'all var(--transition-fast)',
-                        boxShadow: isSelected ? 'var(--shadow-sm)' : 'none',
-                      }}
                     >
-                      <div style={{ color: isSelected ? 'var(--color-primary)' : 'var(--color-text-secondary)' }}>
+                      <div className="payment-method-icon">
                         {method.icon}
                       </div>
-                      <span style={{ fontSize: 'var(--text-xs)', fontWeight: isSelected ? 'var(--weight-bold)' : 'var(--weight-medium)', textAlign: 'center' }}>
+                      <span className="payment-method-label" style={{ fontSize: 'var(--text-xs)', textAlign: 'center' }}>
                         {method.label}
                       </span>
                     </button>
@@ -574,12 +563,13 @@ export default function CheckoutPage() {
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   {/* Visual card preview */}
                   <div style={{
-                    background: 'linear-gradient(135deg, #174C3C 0%, #0F3227 100%)',
+                    background: 'linear-gradient(135deg, #4C1D95 0%, #1E1B4B 100%)',
                     borderRadius: 'var(--radius-lg)',
                     padding: 'var(--space-4) var(--space-5)',
                     color: '#ffffff',
                     marginBottom: 'var(--space-4)',
                     boxShadow: 'var(--shadow-md)',
+                    border: '1px solid #7C3AED',
                     maxWidth: 380,
                   }}>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)' }}>

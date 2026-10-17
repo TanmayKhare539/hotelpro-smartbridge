@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="favBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#2563EB"/>
+      <stop offset="100%" stopColor="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FDE68A"/>
+      <stop offset="100%" stopColor="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#favBg)" stroke="url(#favGold)" stroke-width="1"/>
+  <!-- Canopy Roof -->
+  <path d="M6 14L16 6L26 14" stroke="url(#favGold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Pillars -->
+  <path d="M9 25V14M16 25V11M23 25V14" stroke="url(#favGold)" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Base -->
+  <path d="M7 25H25" stroke="url(#favGold)" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Diamond Star -->
+  <polygon points="16,3 17.5,5 16,6.5 14.5,5" fill="#FDE68A"/>
+</svg>

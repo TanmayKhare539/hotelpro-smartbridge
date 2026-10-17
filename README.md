@@ -1,0 +1,180 @@
+# HotelPro — Human-Centered Hotel Management System 🏨
+
+[![Documentation](https://img.shields.io/badge/Documentation-Project_Deliverables-orange.svg)](./Documentations)
+[![Developer](https://img.shields.io/badge/Developer-TANMAY_KHARE-blue.svg)](#)
+[![Institution](https://img.shields.io/badge/Institution-LNCT_Science-purple.svg)](#)
+[![MERN Stack](https://img.shields.io/badge/Stack-MERN-green.svg)](https://www.mongodb.com/)
+[![React 19](https://img.shields.io/badge/React-19.2-61dafb.svg)](https://react.dev/)
+[![MongoDB](https://img.shields.io/badge/Database-MongoDB_9.0-47A248.svg)](https://www.mongodb.com/)
+[![WCAG 2.1 AA](https://img.shields.io/badge/Accessibility-WCAG_2.1_AA-blue.svg)](https://www.w3.org/WAI/standards-guidelines/wcag/)
+
+> **Full Stack Development Program (MERN Stack) — Capstone Project**  
+> **Developed by: TANMAY KHARE (LNCT Science)**  
+> 📁 **Project Documentation**: [Documentations Folder](./Documentations)
+
+HotelPro is a complete, human-centered hotel management platform built around the **MERN** stack (MongoDB, Express, React 19, Node.js). Engineered with a refined editorial aesthetic, tactile micro-animations, accessible UI components, and complete role-based user journeys for guests, front-desk staff, housekeeping teams, and hotel executives.
+
+---
+
+## 📑 Documentation Quick Links
+
+| Document | Description |
+| :--- | :--- |
+| 📁 **[Project Phase Documentations](./Documentations)** | **Complete Capstone Project Documentation Repository** across all development phases: Ideation, Project Planning, Requirement Analysis, Project Design, and Performance & UAT Testing. |
+| 📘 **[UAT & Performance Testing](./Documentations/Perfomance%20Testing/User%20Acceptance%20Testing%20(UAT)%20Template.docx)** | QA, User Acceptance & Performance Testing Specification by **TANMAY KHARE** (LNCT Science). |
+| 🍃 **[MongoDB Installation & Setup Guide](./MONGODB_README.md)** | Step-by-step offline localhost setup, Windows Service management (`127.0.0.1:27017`), seeding, and Atlas guide. |
+| 🎨 **[Interactive Style Guide (Live)](http://localhost:5173/style-guide)** | Accessible design tokens, WCAG 2.1 AA color contrast palette, tactile states, and typography. |
+
+---
+
+## 🎨 Human-Centered Design Philosophy
+
+HotelPro follows frontend design principles inspired by the [Redwerk Frontend Design Guide](https://redwerk.com/blog/front-end-design-guides/):
+
+- **Harmonious Color Palette**: Royal Sapphire Blue (`#2563EB`) paired with warm champagne gold accents (`#F59E0B`), pitch black backgrounds (`#000000`), and high-contrast semantic tones exceeding WCAG 2.1 AA requirements.
+- **Typography Hierarchy**: Distinctive serif titles using *Times New Roman* for legible, elegant editorial interfaces.
+- **Micro-Interactions & State Clarity**: Dedicated styles for default, hover, focus (`#276EF1` focus-ring), active, disabled, and loading states.
+- **Accessibility by Architecture**: Built with semantic landmarks (`<header>`, `<nav>`, `<main>`, `<article>`, `<footer>`), ARIA attributes, keyboard escape dismissal for modals, and reduced-motion support.
+
+👉 **Explore the interactive design system in the running app at `/style-guide`.**
+
+---
+
+## 🔑 Role-Based Portals & Demo Accounts
+
+HotelPro provides an interactive 1-click credential selector on `/login`:
+
+| Role | Demo Email | Password | Access & Capabilities |
+| :--- | :--- | :--- | :--- |
+| **Guest** | `guest@demo.com` | `demo123` | Search properties, multi-step booking checkout, stay receipts, cancellation |
+| **Staff** | `staff@demo.com` | `demo123` | Front desk console, check-in key issuing, check-out settlement, guest service requests |
+| **Manager** | `manager@demo.com` | `demo123` | Housekeeping grid, shift coordination, room inventory status |
+| **Admin** | `admin@demo.com` | `demo123` | Executive dashboard, Recharts occupancy trends, RevPAR KPIs, audit trail |
+
+---
+
+## 🌟 Key Platform Features & Innovations
+
+- **🏨 Real-Time Hotel Search & Discovery**:
+  - Top navigation **"Search Hotels"** menu and desktop quick-search input.
+  - Multi-attribute search on `/search` and `/hotels` matching hotel name, city, location, category, description, and amenities.
+  - Interactive destination quick-chips (Mumbai, Jaipur, Goa, New Delhi, Shimla, Bengaluru) with instant reset.
+- **💳 100% Offline & Simulated Payment Sandbox**:
+  - **Zero Network Error Guarantee**: Eliminates payment network failures when running offline or without an active backend server.
+  - 4 sandbox payment channels: **Credit/Debit Card** (visual sandbox card preview), **UPI / QR Code** (simulated QR scanner), **Net Banking** (top Indian banks), and **Pay at Property** (cash/card at check-in).
+  - Client-side persistence in `localStorage` (`hotelpro_offline_reservations`) and synchronized with MongoDB when online.
+- **🔒 Privacy & Receipt Security**:
+  - **Direct URL Access Restricted**: Direct public link access to `/booking/confirmation/:ref` is blocked to prevent guest data leaks.
+  - Receipts are viewed securely in-page via an authenticated modal dialog in **My Bookings**.
+  - Clean print stylesheet removing public footers from all vouchers.
+- **🛎️ Front Desk & Administrative Console**:
+  - Live guest check-in/check-out management, room assignment, housekeeping grids, and financial reports.
+  - Non-intrusive live operational alert popup at bottom-right for front-desk activity.
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install Dependencies
+```powershell
+npm install
+```
+
+### 2. Verify Environment Variables (`.env`)
+Your project `.env` is pre-configured for offline localhost development:
+```env
+# Frontend API URL
+VITE_API_BASE_URL=http://localhost:5000/api
+# false = connects to live MongoDB backend; true = standalone mock
+VITE_USE_MOCK=false
+VITE_APP_ENV=development
+
+# Backend Express Port
+PORT=5000
+
+# Local Offline MongoDB Connection (IPv4 localhost)
+MONGODB_URI=mongodb://127.0.0.1:27017/hotelpro
+```
+
+### 3. Verify Local MongoDB Service (Windows)
+Ensure the local MongoDB Windows service is active:
+```powershell
+# Check status
+Get-Service -Name MongoDB
+
+# Start if stopped
+Start-Service -Name MongoDB
+```
+
+### 4. Seed MongoDB Demo Data
+Populate the offline database with initial luxury hotels, rooms, and users:
+```powershell
+npm run seed
+```
+
+### 5. Run the Platform
+
+In **Terminal 1** (Backend API Server):
+```powershell
+npm run server
+```
+- API Base: `http://localhost:5000`
+- Diagnostics / Healthcheck: [http://localhost:5000/api/health](http://localhost:5000/api/health)
+
+In **Terminal 2** (React Frontend):
+```powershell
+npm run dev
+```
+- Available at: [http://localhost:5173](http://localhost:5173)
+
+---
+
+## 📁 Project Structure
+
+```text
+hotelpro/
+├── .env                                 # Active local environment variables
+├── .env.example                         # Environment template
+├── Documentations/                      # Comprehensive project phase deliverables & documentation
+│   ├── Ideation Phase - (1)/            # Brainstorming, problem definition, empathy maps
+│   ├── Project Planning Phase(2)/       # Project schedule & resource planning
+│   ├── Requirement Analysis(3)/         # DataFlow diagrams, SRS, tech stack specifications
+│   ├── Project Design Phase(4)/         # Solution architecture & proposed solution design
+│   └── Perfomance Testing/              # User Acceptance Testing (UAT) & benchmark template
+├── MONGODB_README.md                    # Comprehensive MongoDB installation & offline guide
+├── README.md                            # Main project overview & quickstart
+├── server/                              # MERN Backend Express API
+│   ├── config/db.js                     # Mongoose connection & resilience handler
+│   ├── models/                          # User, Hotel, Room, Booking, Housekeeping, etc.
+│   ├── routes/                          # Express REST routes (/api/auth, /api/hotels, etc.)
+│   ├── seed/seed.js                     # Automated MongoDB seeder
+│   └── server.js                        # Express app listener & health diagnostics
+├── src/
+│   ├── components/
+│   │   ├── common/                      # Button, StatusBadge, Modal, MetricCard, UI atoms
+│   │   └── layouts/                     # PublicNavbar, PublicFooter
+│   ├── context/                         # AuthContext, BookingContext
+│   ├── data/mock/                       # Seed data and mock fallback dataset
+│   ├── layouts/                         # PublicLayout, DashboardLayout
+│   ├── pages/
+│   │   ├── admin/                       # AdminDashboard, RoomManagement, StaffManagement, Audit
+│   │   ├── auth/                        # LoginPage, RegisterPage
+│   │   ├── guest/                       # MyBookingsPage, ProfilePage
+│   │   ├── public/                      # HomePage, HotelsPage, HotelDetailPage, CheckoutPage, StyleGuide
+│   │   └── staff/                       # FrontDeskPage, HousekeepingPage
+│   ├── services/                        # Axios apiClient and service adapters
+│   └── styles/                          # Human-centered CSS design tokens & utilities
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## 👨‍💻 Author & Project Credits
+
+- **Developer**: **TANMAY KHARE**
+- **Institution**: **LNCT Science**
+- **Program**: Full Stack Web Development (MERN Stack)
+- **Specialization**: MongoDB, Express.js, React 19, Node.js, Human-Centered UI/UX
+- **Project Documentation**: [Phase Deliverables & Testing Specifications](./Documentations)
+- **License**: MIT / Educational Project Submission

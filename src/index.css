@@ -1,0 +1,42 @@
+/* HotelPro Global Stylesheet Entry Point */
+@import './styles/index.css';
+@import 'react-toastify/dist/ReactToastify.css';
+
+/* Additional global overrides */
+:root {
+  color-scheme: dark;
+}
+
+/* Universal Font Override to Times New Roman */
+*, *::before, *::after {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+/* Global Background — Dark Theme */
+html, body {
+  background-color: #0A0A0A !important;
+  color: var(--color-text-primary, #F9FAFB);
+  font-family: 'Times New Roman', Times, serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root, .app-shell, .dashboard-shell, .dashboard-main {
+  background-color: #0A0A0A;
+}
+
+/* Form controls font */
+input, button, select, textarea {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+/* Toast styling override to match HotelPro palette */
+.Toastify__toast {
+  font-family: 'Times New Roman', Times, serif !important;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  box-shadow: var(--shadow-lg);
+  background-color: #1A1A1A;
+  color: #F9FAFB;
+  border: 1px solid #2D2D2D;
+}
